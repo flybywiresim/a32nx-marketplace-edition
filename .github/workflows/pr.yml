@@ -1,0 +1,53 @@
+name: PR
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+      - reopened
+      - ready_for_review
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+      - name: install
+        run: npm install --no-optional
+      - name: npm run lint
+        run: ./scripts/dev-env/run.sh npm run lint
+      - name: lint-rust.sh
+        run: |
+          ./scripts/dev-env/run.sh scripts/lint-rust.sh
+  test:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+      - name: test-rust.sh
+        run: |
+          ./scripts/dev-env/run.sh scripts/test-rust.sh
+  build:
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.draft == false
+    env:
+      ZIP_NAME: A32NX.zip
+      BUILD_DIR_NAME: zip-build
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v2
+      - name: Build A32NX
+        run: |
+          ./scripts/dev-env/run.sh ./scripts/setup.sh
+          ./scripts/dev-env/run.sh ./scripts/build.sh --no-tty
+      - name: Generate ZIP file
+        run: |
+          mkdir ./${{ env.BUILD_DIR_NAME }}
+          zip -r ./${{ env.BUILD_DIR_NAME }}/${{ env.ZIP_NAME }} ./flybywire-aircraft-a320-neo/
+      - uses: actions/upload-artifact@v2
+        with:
+          name: A32NX
+          path: ${{ env.BUILD_DIR_NAME }}/${{ env.ZIP_NAME }}
