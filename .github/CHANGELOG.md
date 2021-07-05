@@ -4,6 +4,10 @@
 <!-- Use the following format below -->
 <!--  1. [Changed Area] Title of changes - @github username (Name)  -->
 
+## 0.7.0
+1. [MISC] Standby instrument brightness buttons can now be held down rather than pressed to -/+ brightness - @2hwk (2Cas#1022)
+1. [ND] TCAS symbols correctly display in 10, 20, 40nm ARC/ROSE views + bug fixes - @2hwk (2Cas#1022)
+
 ## 0.6.1
 1. [DISPLAYS] RMP backlight, ATC and RTPI font color and backlight - @marcman86 (marcman86#4907)
 1. [EFB] Fix fuel tank capacity values - @donstim (donbikes#4084)

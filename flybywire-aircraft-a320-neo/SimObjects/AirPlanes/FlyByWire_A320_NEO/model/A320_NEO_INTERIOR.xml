@@ -819,13 +819,13 @@
                         <BTN_ID>BARO_LS</BTN_ID>
                         <ONLY_SEQ1/>
                     </UseTemplate>
-                    <UseTemplate Name="A32NX_Push_BARO_Template">
+                    <UseTemplate Name="A32NX_Push_Held_BARO_Template">
                         <NODE_ID>PUSH_BARO_PLUS</NODE_ID>
                         <TOOLTIPID>Increase ISI brightness</TOOLTIPID>
                         <BTN_ID>BARO_PLUS</BTN_ID>
                         <ONLY_SEQ1/>
                     </UseTemplate>
-                    <UseTemplate Name="A32NX_Push_BARO_Template">
+                    <UseTemplate Name="A32NX_Push_Held_BARO_Template">
                         <NODE_ID>PUSH_BARO_MINUS</NODE_ID>
                         <TOOLTIPID>Decrease ISI brightness</TOOLTIPID>
                         <BTN_ID>BARO_MINUS</BTN_ID>
@@ -1213,10 +1213,10 @@
                     <HAS_AUTO>True</HAS_AUTO>
                     <INVERT_ANIM>True</INVERT_ANIM>
                     <POTENTIOMETER>24</POTENTIOMETER>
-                    <ANIMTIP_0>Turn OFF strobe lights</ANIMTIP_0>
+                    <ANIMTIP_0>TT:COCKPIT.TOOLTIPS.STROBE_LIGHT_OFF</ANIMTIP_0>
                     <ANIMTIP_1_ON_PERCENT>0.5</ANIMTIP_1_ON_PERCENT>
                     <ANIMTIP_1>Set strobe lights to AUTO</ANIMTIP_1>
-                    <ANIMTIP_2>Turn ON strobe lights</ANIMTIP_2>
+                    <ANIMTIP_2>TT:COCKPIT.TOOLTIPS.STROBE_LIGHT_ON</ANIMTIP_2>
 
                     <WWISE_EVENT>lswitch</WWISE_EVENT>
                 </UseTemplate>
@@ -2578,8 +2578,8 @@
                         <NODE_ID>KNOB_OVHD_READINGLTL</NODE_ID>
                         <ANIM_NAME>KNOB_OVHD_READINGLTL</ANIM_NAME>
                         <POTENTIOMETER>96</POTENTIOMETER>
-                        <ANIMTIP_0>Decrease reading light brightness</ANIMTIP_0>
-                        <ANIMTIP_1>Increase reading light brightness</ANIMTIP_1>
+                        <ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LIGHTS_READING_DECREASE</ANIMTIP_0>
+                        <ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LIGHTS_READING_INCREASE</ANIMTIP_1>
                     </UseTemplate>
 
                     <!-- Left light -->
@@ -2593,8 +2593,8 @@
                         <NODE_ID>KNOB_OVHD_READINGLTR</NODE_ID>
                         <ANIM_NAME>KNOB_OVHD_READINGLTR</ANIM_NAME>
                         <POTENTIOMETER>97</POTENTIOMETER>
-                        <ANIMTIP_0>Decrease reading light brightness</ANIMTIP_0>
-                        <ANIMTIP_1>Increase reading light brightness</ANIMTIP_1>
+                        <ANIMTIP_0>TT:COCKPIT.TOOLTIPS.LIGHTS_READING_DECREASE</ANIMTIP_0>
+                        <ANIMTIP_1>TT:COCKPIT.TOOLTIPS.LIGHTS_READING_INCREASE</ANIMTIP_1>
                     </UseTemplate>
 
                     <!-- Right light -->
